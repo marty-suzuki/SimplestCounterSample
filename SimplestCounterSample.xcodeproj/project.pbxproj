@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		37213C122018FB3A009A93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C112018FB3A009A93FD /* AppDelegate.swift */; };
-		37213C142018FB3A009A93FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C132018FB3A009A93FD /* ViewController.swift */; };
+		37213C142018FB3A009A93FD /* MVCSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C132018FB3A009A93FD /* MVCSampleViewController.swift */; };
 		37213C172018FB3A009A93FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37213C152018FB3A009A93FD /* Main.storyboard */; };
 		37213C192018FB3A009A93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37213C182018FB3A009A93FD /* Assets.xcassets */; };
 		37213C1C2018FB3A009A93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37213C1A2018FB3A009A93FD /* LaunchScreen.storyboard */; };
 		37213C272018FB3A009A93FD /* SimplestCounterSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C262018FB3A009A93FD /* SimplestCounterSampleTests.swift */; };
+		37213C332018FCB2009A93FD /* MVVMSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C322018FCB2009A93FD /* MVVMSampleViewController.swift */; };
+		37213C372018FCD0009A93FD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C352018FCD0009A93FD /* RxSwift.framework */; };
+		37213C382018FCD0009A93FD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C362018FCD0009A93FD /* RxCocoa.framework */; };
+		37213C3A2018FD5E009A93FD /* MVPSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C392018FD5E009A93FD /* MVPSampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,7 @@
 /* Begin PBXFileReference section */
 		37213C0E2018FB3A009A93FD /* SimplestCounterSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplestCounterSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37213C112018FB3A009A93FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37213C132018FB3A009A93FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37213C132018FB3A009A93FD /* MVCSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCSampleViewController.swift; sourceTree = "<group>"; };
 		37213C162018FB3A009A93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37213C182018FB3A009A93FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37213C1B2018FB3A009A93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		37213C222018FB3A009A93FD /* SimplestCounterSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplestCounterSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37213C262018FB3A009A93FD /* SimplestCounterSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplestCounterSampleTests.swift; sourceTree = "<group>"; };
 		37213C282018FB3A009A93FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37213C322018FCB2009A93FD /* MVVMSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleViewController.swift; sourceTree = "<group>"; };
+		37213C352018FCD0009A93FD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		37213C362018FCD0009A93FD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		37213C392018FD5E009A93FD /* MVPSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37213C372018FCD0009A93FD /* RxSwift.framework in Frameworks */,
+				37213C382018FCD0009A93FD /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,7 @@
 				37213C102018FB3A009A93FD /* SimplestCounterSample */,
 				37213C252018FB3A009A93FD /* SimplestCounterSampleTests */,
 				37213C0F2018FB3A009A93FD /* Products */,
+				37213C342018FCD0009A93FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				37213C112018FB3A009A93FD /* AppDelegate.swift */,
-				37213C132018FB3A009A93FD /* ViewController.swift */,
+				37213C132018FB3A009A93FD /* MVCSampleViewController.swift */,
+				37213C392018FD5E009A93FD /* MVPSampleViewController.swift */,
+				37213C322018FCB2009A93FD /* MVVMSampleViewController.swift */,
 				37213C152018FB3A009A93FD /* Main.storyboard */,
 				37213C182018FB3A009A93FD /* Assets.xcassets */,
 				37213C1A2018FB3A009A93FD /* LaunchScreen.storyboard */,
@@ -94,6 +107,15 @@
 				37213C282018FB3A009A93FD /* Info.plist */,
 			);
 			path = SimplestCounterSampleTests;
+			sourceTree = "<group>";
+		};
+		37213C342018FCD0009A93FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37213C362018FCD0009A93FD /* RxCocoa.framework */,
+				37213C352018FCD0009A93FD /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37213C142018FB3A009A93FD /* ViewController.swift in Sources */,
+				37213C3A2018FD5E009A93FD /* MVPSampleViewController.swift in Sources */,
+				37213C142018FB3A009A93FD /* MVCSampleViewController.swift in Sources */,
+				37213C332018FCB2009A93FD /* MVVMSampleViewController.swift in Sources */,
 				37213C122018FB3A009A93FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimplestCounterSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.marty-suzuki.SimplestCounterSample";
@@ -387,6 +415,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimplestCounterSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.marty-suzuki.SimplestCounterSample";
