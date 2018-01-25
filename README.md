@@ -2,6 +2,8 @@
 
 This is simplest Counter App for beginner of iOS development.
 
+![](./Images/counter.gif)
+
 ### MVC
   - Source: [MVCSampleViewController.swift](./SimplestCounterSample/MVCSampleViewController.swift)
   - Unit Test: [CountModelTestCase.swift](./SimplestCounterSampleTests/CountModelTestCase.swift)
@@ -11,7 +13,7 @@ This is simplest Counter App for beginner of iOS development.
   - Unit Test: [CountPresenterTestCase.swift](./SimplestCounterSampleTests/CountPresenterTestCase.swift)
 
 ### MVVM with [RxSwift](https://github.com/ReactiveX/RxSwift)
-  - Source: [MVVMSampleViewController.swift](.SimplestCounterSample/MVVMSampleViewController.swift)
+  - Source: [MVVMSampleViewController.swift](./SimplestCounterSample/MVVMSampleViewController.swift)
   - Unit Test: [CountViewModelTestCase.swift](./SimplestCounterSampleTests/CountViewModelTestCase.swift)
 
 ## Run
