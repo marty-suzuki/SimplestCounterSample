@@ -123,6 +123,7 @@
                         <segue destination="CrE-aQ-UeT" kind="relationship" relationship="viewControllers" id="AhZ-1L-z8a"/>
                         <segue destination="70Y-9D-n3O" kind="relationship" relationship="viewControllers" id="mTs-RS-ylC"/>
                         <segue destination="XYb-u7-7iQ" kind="relationship" relationship="viewControllers" id="0Y6-ce-7Rm"/>
+                        <segue destination="OKG-6Y-4SE" kind="relationship" relationship="viewControllers" id="MbI-iQ-yo6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhg-q8-A4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,6 +182,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NU-o8-HuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="729" y="154"/>
+        </scene>
+        <!--VueFlux-->
+        <scene sceneID="cDK-T6-hD3">
+            <objects>
+                <viewController id="OKG-6Y-4SE" customClass="VueFluxSampleViewController" customModule="SimplestCounterSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TJO-c7-XmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEP-eR-p77">
+                                <rect key="frame" x="160" y="201" width="54" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⬆"/>
+                                <connections>
+                                    <action selector="upButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="iMI-G0-b7x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-XX-9bR">
+                                <rect key="frame" x="160" y="393" width="54" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⬇"/>
+                                <connections>
+                                    <action selector="downButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="D8Q-Vb-O8X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctj-Xf-YIZ">
+                                <rect key="frame" x="162" y="303" width="50.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ctj-Xf-YIZ" firstAttribute="centerY" secondItem="TJO-c7-XmJ" secondAttribute="centerY" id="MUt-JT-aTf"/>
+                            <constraint firstItem="ctj-Xf-YIZ" firstAttribute="centerX" secondItem="TJO-c7-XmJ" secondAttribute="centerX" id="RkM-BF-JQX"/>
+                            <constraint firstItem="v6f-XX-9bR" firstAttribute="centerX" secondItem="TJO-c7-XmJ" secondAttribute="centerX" id="WY9-1o-bB5"/>
+                            <constraint firstItem="ctj-Xf-YIZ" firstAttribute="top" secondItem="UEP-eR-p77" secondAttribute="bottom" constant="30" id="oS4-gT-uop"/>
+                            <constraint firstItem="UEP-eR-p77" firstAttribute="centerX" secondItem="TJO-c7-XmJ" secondAttribute="centerX" id="rOe-39-8Eh"/>
+                            <constraint firstItem="v6f-XX-9bR" firstAttribute="top" secondItem="ctj-Xf-YIZ" secondAttribute="bottom" constant="30" id="y6h-uv-y9G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Ae-eu-KJ2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="VueFlux" id="bya-vj-Eaq"/>
+                    <connections>
+                        <outlet property="countLabel" destination="ctj-Xf-YIZ" id="1E7-ep-FSp"/>
+                        <outlet property="downButton" destination="v6f-XX-9bR" id="Dhh-TB-FUS"/>
+                        <outlet property="upButton" destination="UEP-eR-p77" id="GHC-iN-ubw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftg-6c-dIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="904"/>
         </scene>
     </scenes>
 </document>

@@ -19,6 +19,7 @@
 		9D137AFC201EC9DF009D20CE /* FluxCapacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */; };
 		9D137AFD201EC9DF009D20CE /* VueFluxReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */; };
 		9D137AFE201EC9DF009D20CE /* VueFlux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFB201EC9DF009D20CE /* VueFlux.framework */; };
+		9D137B00201ECA7F009D20CE /* VueFluxSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D137AFF201ECA7F009D20CE /* VueFluxSampleViewController.swift */; };
 		ED727D3E2019812D00E5C761 /* CountModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */; };
 		ED727D402019824E00E5C761 /* CountPresenterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */; };
 		ED727D4220198E3200E5C761 /* CountViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */; };
@@ -53,6 +54,7 @@
 		9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FluxCapacitor.framework; path = Carthage/Build/iOS/FluxCapacitor.framework; sourceTree = "<group>"; };
 		9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFluxReactive.framework; path = Carthage/Build/iOS/VueFluxReactive.framework; sourceTree = "<group>"; };
 		9D137AFB201EC9DF009D20CE /* VueFlux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFlux.framework; path = Carthage/Build/iOS/VueFlux.framework; sourceTree = "<group>"; };
+		9D137AFF201ECA7F009D20CE /* VueFluxSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VueFluxSampleViewController.swift; sourceTree = "<group>"; };
 		ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModelTestCase.swift; sourceTree = "<group>"; };
 		ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPresenterTestCase.swift; sourceTree = "<group>"; };
 		ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModelTestCase.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				37213C132018FB3A009A93FD /* MVCSampleViewController.swift */,
 				37213C392018FD5E009A93FD /* MVPSampleViewController.swift */,
 				37213C322018FCB2009A93FD /* MVVMSampleViewController.swift */,
+				9D137AFF201ECA7F009D20CE /* VueFluxSampleViewController.swift */,
 				37213C152018FB3A009A93FD /* Main.storyboard */,
 				37213C182018FB3A009A93FD /* Assets.xcassets */,
 				37213C1A2018FB3A009A93FD /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				37213C3A2018FD5E009A93FD /* MVPSampleViewController.swift in Sources */,
 				37213C142018FB3A009A93FD /* MVCSampleViewController.swift in Sources */,
 				37213C332018FCB2009A93FD /* MVVMSampleViewController.swift in Sources */,
+				9D137B00201ECA7F009D20CE /* VueFluxSampleViewController.swift in Sources */,
 				37213C122018FB3A009A93FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
