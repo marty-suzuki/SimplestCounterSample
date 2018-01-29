@@ -13,17 +13,18 @@ import XCTest
 final class CountPresenterTestCase: XCTestCase {
 
     private final class MockCountView: CountViewType {
+
         private(set) lazy var presenter: CountPresenterType = {
             fatalError("presetnter does not use in this mock.")
         }()
 
-        var didCallUpdateDownButton: (((isEnabled: Bool, alpha: CGFloat)) -> ())?
+        var didCallUpdateDecrementButton: (((isEnabled: Bool, alpha: CGFloat)) -> ())?
         var didCallUpdateCountLabel: ((String) -> ())?
 
         init() {}
 
-        func updateDownButton(isEnabled: Bool, alpha: CGFloat) {
-            didCallUpdateDownButton?((isEnabled, alpha))
+        func updateDecrementButton(isEnabled: Bool, alpha: CGFloat) {
+            didCallUpdateDecrementButton?((isEnabled, alpha))
         }
 
         func updateCountLabel(count: String) {
@@ -53,7 +54,7 @@ final class CountPresenterTestCase: XCTestCase {
         }
 
         group.enter()
-        view.didCallUpdateDownButton = { arg in
+        view.didCallUpdateDecrementButton = { arg in
             XCTAssertFalse(arg.isEnabled)
             XCTAssertEqual(arg.alpha, 0.5)
             group.leave()
@@ -82,13 +83,13 @@ final class CountPresenterTestCase: XCTestCase {
             }
 
             group.enter()
-            view.didCallUpdateDownButton = { arg in
+            view.didCallUpdateDecrementButton = { arg in
                 XCTAssertTrue(arg.isEnabled)
                 XCTAssertEqual(arg.alpha, 1)
                 group.leave()
             }
 
-            presenter.countUp()
+            presenter.increment()
         }
 
         do { // countDown test
@@ -101,13 +102,13 @@ final class CountPresenterTestCase: XCTestCase {
             }
 
             group.enter()
-            view.didCallUpdateDownButton = { arg in
+            view.didCallUpdateDecrementButton = { arg in
                 XCTAssertFalse(arg.isEnabled)
                 XCTAssertEqual(arg.alpha, 0.5)
                 group.leave()
             }
 
-            presenter.countDown()
+            presenter.decrement()
         }
 
         let expect = expectation(description: "increment and decrement count")

@@ -12,8 +12,8 @@ import UIKit
 
 final class MVCSampleViewController: UIViewController {
 
-    @IBOutlet private weak var upButton: UIButton!
-    @IBOutlet private weak var downButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
     @IBOutlet private weak var countLabel: UILabel!
 
     private let model = CountModel()
@@ -23,28 +23,28 @@ final class MVCSampleViewController: UIViewController {
 
         model.countChanged = { [unowned self] in
             self.updateCountLabel()
-            self.updateDownButton()
+            self.updateDecrementButton()
         }
 
-        updateDownButton()
+        updateDecrementButton()
     }
 
     private func updateCountLabel() {
         countLabel.text = "\(model.count)"
     }
 
-    private func updateDownButton() {
+    private func updateDecrementButton() {
         let isEnabled = model.count > 0
-        downButton.isEnabled = isEnabled
-        downButton.alpha = isEnabled ? 1 : 0.5
+        decrementButton.isEnabled = isEnabled
+        decrementButton.alpha = isEnabled ? 1 : 0.5
     }
 
-    @IBAction private func upButtonTapped(_ sender: UIButton) {
-        model.countUp()
+    @IBAction private func incrementButtonTapped(_ sender: UIButton) {
+        model.increment()
     }
 
-    @IBAction private func downButtonTapped(_ sender: UIButton) {
-        model.countDown()
+    @IBAction private func decrementButtonTapped(_ sender: UIButton) {
+        model.decrement()
     }
 }
 
@@ -64,11 +64,11 @@ final class CountModel {
         self.count = 0
     }
 
-    func countUp() {
+    func increment() {
         count += 1
     }
 
-    func countDown() {
+    func decrement() {
         count -= 1
     }
 }

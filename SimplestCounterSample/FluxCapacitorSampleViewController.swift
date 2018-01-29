@@ -11,8 +11,8 @@ import FluxCapacitor
 
 final class FluxCapacitorSampleViewController: UIViewController {
 
-    @IBOutlet private weak var upButton: UIButton!
-    @IBOutlet private weak var downButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
     @IBOutlet private weak var countLabel: UILabel!
 
     private let action = FC.CountAction()
@@ -34,16 +34,16 @@ final class FluxCapacitorSampleViewController: UIViewController {
 
     private func updateViews() {
         countLabel.text = store.count
-        downButton.isEnabled = store.isDownEnabled
-        downButton.alpha = store.downAlpha
+        decrementButton.isEnabled = store.isDecrementEnabled
+        decrementButton.alpha = store.decrementAlpha
     }
 
-    @IBAction private func upButtonTapped(_ sender: UIButton) {
-        action.countUp()
+    @IBAction private func incrementButtonTapped(_ sender: UIButton) {
+        action.increment()
     }
 
-    @IBAction private func downButtonTapped(_ sender: UIButton) {
-        action.countDown()
+    @IBAction private func decrementButtonTapped(_ sender: UIButton) {
+        action.decrement()
     }
 }
 
@@ -55,12 +55,12 @@ enum FC { // Namespace
     final class CountAction: Actionable {
         typealias DispatchValueType = CountValue
 
-        func countUp() {
-            invoke(.countUp)
+        func increment() {
+            invoke(.increment)
         }
 
-        func countDown() {
-            invoke(.countDown)
+        func decrement() {
+            invoke(.decrement)
         }
     }
 
@@ -73,20 +73,20 @@ enum FC { // Namespace
             return "\(_count)"
         }
 
-        var isDownEnabled: Bool {
+        var isDecrementEnabled: Bool {
             return _count > 0
         }
 
-        var downAlpha: CGFloat {
-            return isDownEnabled ? 1 : 0.5
+        var decrementAlpha: CGFloat {
+            return isDecrementEnabled ? 1 : 0.5
         }
 
         init(dispatcher: Dispatcher) {
             register { [unowned self] value in
                 switch value {
-                case .countUp:
+                case .increment:
                     self._count += 1
-                case .countDown:
+                case .decrement:
                     self._count -= 1
                 }
             }
@@ -97,7 +97,7 @@ enum FC { // Namespace
         typealias RelatedActionType = CountAction
         typealias RelatedStoreType = CountStore
 
-        case countUp
-        case countDown
+        case increment
+        case decrement
     }
 }

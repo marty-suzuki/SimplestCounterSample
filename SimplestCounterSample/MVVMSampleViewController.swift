@@ -14,13 +14,13 @@ import RxCocoa
 
 final class MVVMSampleViewController: UIViewController {
 
-    @IBOutlet private weak var upButton: UIButton!
-    @IBOutlet private weak var downButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
     @IBOutlet private weak var countLabel: UILabel!
 
     private lazy var viewModel: CountViewModel = {
-        return .init(upButtonTapped: self.upButton.rx.tap.asObservable(),
-                     downButtonTapped: self.downButton.rx.tap.asObservable())
+        return .init(incrementButtonTapped: self.incrementButton.rx.tap.asObservable(),
+                     decrementButtonTapped: self.decrementButton.rx.tap.asObservable())
     }()
 
     private let disposeBag = DisposeBag()
@@ -28,12 +28,12 @@ final class MVVMSampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.isDownEnabled
-            .bind(to: downButton.rx.isEnabled)
+        viewModel.isDecrementEnabled
+            .bind(to: decrementButton.rx.isEnabled)
             .disposed(by: disposeBag)
 
-        viewModel.downAlpha
-            .bind(to: downButton.rx.alpha)
+        viewModel.decrementAlpha
+            .bind(to: decrementButton.rx.alpha)
             .disposed(by: disposeBag)
 
         viewModel.count
@@ -48,23 +48,23 @@ final class MVVMSampleViewController: UIViewController {
 final class CountViewModel {
 
     let count: Observable<String>
-    let isDownEnabled: Observable<Bool>
-    let downAlpha: Observable<CGFloat>
+    let isDecrementEnabled: Observable<Bool>
+    let decrementAlpha: Observable<CGFloat>
 
     private let disposeBag = DisposeBag()
 
-    init(upButtonTapped: Observable<Void>,
-         downButtonTapped: Observable<Void>) {
+    init(incrementButtonTapped: Observable<Void>,
+         decrementButtonTapped: Observable<Void>) {
 
         let _count = BehaviorSubject<Int>(value: 0)
-        let _isDownEnabled = _count.map { $0 > 0 }
+        let _isDecrementEnabled = _count.map { $0 > 0 }
 
-        self.isDownEnabled = _isDownEnabled
+        self.isDecrementEnabled = _isDecrementEnabled
         self.count = _count.map(String.init)
-        self.downAlpha = _isDownEnabled.map { $0 ? 1 : 0.5 }
+        self.decrementAlpha = _isDecrementEnabled.map { $0 ? 1 : 0.5 }
 
-        Observable.merge(upButtonTapped.map { 1 },
-                         downButtonTapped.map { -1 })
+        Observable.merge(incrementButtonTapped.map { 1 },
+                         decrementButtonTapped.map { -1 })
             .withLatestFrom(_count.asObservable()) { $1 + $0 }
             .bind(to: _count)
             .disposed(by: disposeBag)

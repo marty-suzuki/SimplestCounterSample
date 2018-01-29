@@ -13,39 +13,39 @@ import RxCocoa
 @testable import SimplestCounterSample
 
 final class CountViewModelTestCase: XCTestCase {
-    private var upButtonTapped: PublishSubject<Void>!
-    private var downButtonTapped: PublishSubject<Void>!
+    private var incrementButtonTapped: PublishSubject<Void>!
+    private var decrementButtonTapped: PublishSubject<Void>!
     private var viewModel: CountViewModel!
 
     override func setUp() {
         super.setUp()
 
-        self.upButtonTapped = PublishSubject()
-        self.downButtonTapped = PublishSubject()
-        self.viewModel = CountViewModel(upButtonTapped: upButtonTapped,
-                                        downButtonTapped: downButtonTapped)
+        self.incrementButtonTapped = PublishSubject()
+        self.decrementButtonTapped = PublishSubject()
+        self.viewModel = CountViewModel(incrementButtonTapped: incrementButtonTapped,
+                                        decrementButtonTapped: decrementButtonTapped)
     }
     
     func testInitialValues() {
         let count = Variable<String?>(nil)
-        let isDownEnabled = Variable<Bool?>(nil)
-        let downAlpha = Variable<CGFloat?>(nil)
+        let isDecrementEnabled = Variable<Bool?>(nil)
+        let decrementAlpha = Variable<CGFloat?>(nil)
 
         _ = viewModel.count
             .take(1)
             .bind(to: count)
 
-        _ = viewModel.isDownEnabled
+        _ = viewModel.isDecrementEnabled
             .take(1)
-            .bind(to: isDownEnabled)
+            .bind(to: isDecrementEnabled)
 
-        _ = viewModel.downAlpha
+        _ = viewModel.decrementAlpha
             .take(1)
-            .bind(to: downAlpha)
+            .bind(to: decrementAlpha)
 
         XCTAssertEqual(count.value, "0")
-        XCTAssertFalse(isDownEnabled.value!)
-        XCTAssertEqual(downAlpha.value, 0.5)
+        XCTAssertFalse(isDecrementEnabled.value!)
+        XCTAssertEqual(decrementAlpha.value, 0.5)
     }
 
     func testCountUpAndCountDown() {
@@ -64,7 +64,7 @@ final class CountViewModelTestCase: XCTestCase {
                 })
 
             group.enter()
-            _ = viewModel.isDownEnabled
+            _ = viewModel.isDecrementEnabled
                 .skip(1)
                 .take(1)
                 .subscribe(onNext: { isEnabled in
@@ -73,7 +73,7 @@ final class CountViewModelTestCase: XCTestCase {
                 })
 
             group.enter()
-            _ = viewModel.downAlpha
+            _ = viewModel.decrementAlpha
                 .skip(1)
                 .take(1)
                 .subscribe(onNext: { alpha in
@@ -81,7 +81,7 @@ final class CountViewModelTestCase: XCTestCase {
                     group.leave()
                 })
 
-            upButtonTapped.onNext(())
+            incrementButtonTapped.onNext(())
         }
 
         do { // countDown test
@@ -97,7 +97,7 @@ final class CountViewModelTestCase: XCTestCase {
                 })
 
             group.enter()
-            _ = viewModel.isDownEnabled
+            _ = viewModel.isDecrementEnabled
                 .skip(1)
                 .take(1)
                 .subscribe(onNext: { isEnabled in
@@ -106,7 +106,7 @@ final class CountViewModelTestCase: XCTestCase {
                 })
 
             group.enter()
-            _ = viewModel.downAlpha
+            _ = viewModel.decrementAlpha
                 .skip(1)
                 .take(1)
                 .subscribe(onNext: { alpha in
@@ -114,7 +114,7 @@ final class CountViewModelTestCase: XCTestCase {
                     group.leave()
                 })
 
-            downButtonTapped.onNext(())
+            decrementButtonTapped.onNext(())
         }
 
         let expect = expectation(description: "increment and decrement count")

@@ -49,8 +49,8 @@
                     <tabBarItem key="tabBarItem" title="MVVM" id="FHm-g8-Zzv"/>
                     <connections>
                         <outlet property="countLabel" destination="OPD-WM-wO8" id="Ejj-pz-Ii4"/>
-                        <outlet property="downButton" destination="5uM-xA-eUt" id="j3W-zN-Nih"/>
-                        <outlet property="upButton" destination="sTJ-sj-RKE" id="HGY-14-E0u"/>
+                        <outlet property="decrementButton" destination="5uM-xA-eUt" id="Bko-hz-nhu"/>
+                        <outlet property="incrementButton" destination="sTJ-sj-RKE" id="DfT-EI-olK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZx-Bn-Xau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬆"/>
                                 <connections>
-                                    <action selector="upButtonTapped:" destination="CrE-aQ-UeT" eventType="touchUpInside" id="I35-VO-h4g"/>
+                                    <action selector="incrementButtonTapped:" destination="CrE-aQ-UeT" eventType="touchUpInside" id="hSZ-UL-IC9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiT-oB-PUh">
@@ -84,7 +84,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬇"/>
                                 <connections>
-                                    <action selector="downButtonTapped:" destination="CrE-aQ-UeT" eventType="touchUpInside" id="Bcv-nt-gIX"/>
+                                    <action selector="decrementButtonTapped:" destination="CrE-aQ-UeT" eventType="touchUpInside" id="UBK-xK-xMk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,8 +102,8 @@
                     <tabBarItem key="tabBarItem" title="MVC" id="0sd-Vc-c3g"/>
                     <connections>
                         <outlet property="countLabel" destination="kiT-oB-PUh" id="Yft-ql-Uil"/>
-                        <outlet property="downButton" destination="KXl-GH-UkI" id="PGb-qI-5Rx"/>
-                        <outlet property="upButton" destination="o9l-KS-Ool" id="haa-go-CzD"/>
+                        <outlet property="decrementButton" destination="KXl-GH-UkI" id="cCD-sZ-8Vj"/>
+                        <outlet property="incrementButton" destination="o9l-KS-Ool" id="OrN-BY-8Vm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tq-In-HGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,7 +144,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬆"/>
                                 <connections>
-                                    <action selector="upButtonTapped:" destination="70Y-9D-n3O" eventType="touchUpInside" id="Pxb-fY-V0c"/>
+                                    <action selector="incrementButtonTapped:" destination="70Y-9D-n3O" eventType="touchUpInside" id="org-ST-mrI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-Z5-GRM">
@@ -158,7 +158,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬇"/>
                                 <connections>
-                                    <action selector="downButtonTapped:" destination="70Y-9D-n3O" eventType="touchUpInside" id="zvs-6K-KGl"/>
+                                    <action selector="decrementButtonTapped:" destination="70Y-9D-n3O" eventType="touchUpInside" id="YsT-sp-Llv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -176,8 +176,8 @@
                     <tabBarItem key="tabBarItem" title="MVP" id="pAL-pn-J3k"/>
                     <connections>
                         <outlet property="countLabel" destination="ctb-Z5-GRM" id="7et-7C-Nfo"/>
-                        <outlet property="downButton" destination="ELc-Sa-6Mg" id="fbx-kh-YQ1"/>
-                        <outlet property="upButton" destination="YAs-kd-N12" id="5Ef-Fz-1rK"/>
+                        <outlet property="decrementButton" destination="ELc-Sa-6Mg" id="FlH-lp-Z2h"/>
+                        <outlet property="incrementButton" destination="YAs-kd-N12" id="3QU-4E-Kqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NU-o8-HuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +197,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬆"/>
                                 <connections>
-                                    <action selector="upButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="iMI-G0-b7x"/>
+                                    <action selector="incrementButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="nhC-xV-GTV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-XX-9bR">
@@ -205,7 +205,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬇"/>
                                 <connections>
-                                    <action selector="downButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="D8Q-Vb-O8X"/>
+                                    <action selector="decrementButtonTapped:" destination="OKG-6Y-4SE" eventType="touchUpInside" id="DwP-H1-Uhv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctj-Xf-YIZ">
@@ -229,8 +229,8 @@
                     <tabBarItem key="tabBarItem" title="VueFlux" id="bya-vj-Eaq"/>
                     <connections>
                         <outlet property="countLabel" destination="ctj-Xf-YIZ" id="1E7-ep-FSp"/>
-                        <outlet property="downButton" destination="v6f-XX-9bR" id="Dhh-TB-FUS"/>
-                        <outlet property="upButton" destination="UEP-eR-p77" id="GHC-iN-ubw"/>
+                        <outlet property="decrementButton" destination="v6f-XX-9bR" id="eq1-sV-8nV"/>
+                        <outlet property="incrementButton" destination="UEP-eR-p77" id="1cq-ju-hrz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftg-6c-dIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,7 +250,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬆"/>
                                 <connections>
-                                    <action selector="upButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="Xbd-Zg-4ie"/>
+                                    <action selector="incrementButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="9qa-dB-E4T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-h7-1Yj">
@@ -258,7 +258,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="⬇"/>
                                 <connections>
-                                    <action selector="downButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="UP4-9D-89y"/>
+                                    <action selector="decrementButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="Ts1-ut-wgV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-dQ-qZO">
@@ -282,8 +282,8 @@
                     <tabBarItem key="tabBarItem" title="FluxCapacitor" id="Vge-IM-059"/>
                     <connections>
                         <outlet property="countLabel" destination="Mz1-dQ-qZO" id="byk-dH-EQH"/>
-                        <outlet property="downButton" destination="kJL-h7-1Yj" id="OHm-vN-IAk"/>
-                        <outlet property="upButton" destination="raP-dZ-dGe" id="2PG-Nx-dEf"/>
+                        <outlet property="decrementButton" destination="kJL-h7-1Yj" id="A9x-gF-hxS"/>
+                        <outlet property="incrementButton" destination="raP-dZ-dGe" id="beH-ol-RSb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97c-bH-XKb" userLabel="First Responder" sceneMemberID="firstResponder"/>

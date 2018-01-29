@@ -28,7 +28,7 @@ final class CountModelTestCase: XCTestCase {
             expect.fulfill()
         }
 
-        model.countUp()
+        model.increment()
 
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -41,7 +41,7 @@ final class CountModelTestCase: XCTestCase {
             expect.fulfill()
         }
 
-        model.countDown()
+        model.decrement()
 
         waitForExpectations(timeout: 0.1, handler: nil)
     }

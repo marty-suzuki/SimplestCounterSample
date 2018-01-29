@@ -12,8 +12,8 @@ import VueFluxReactive
 
 final class VueFluxSampleViewController: UIViewController {
 
-    @IBOutlet private weak var upButton: UIButton!
-    @IBOutlet private weak var downButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
     @IBOutlet private weak var countLabel: UILabel!
 
     private let store = Store<VF.CountState>(state: .init(), mutations: .init(), executor: .immediate)
@@ -25,21 +25,21 @@ final class VueFluxSampleViewController: UIViewController {
             .observe(on: .mainThread)
             .bind(to: countLabel, \.text)
 
-        store.computed.isDownEnabled
+        store.computed.isDecrementEnabled
             .observe(on: .mainThread)
-            .bind(to: downButton, \.isEnabled)
+            .bind(to: decrementButton, \.isEnabled)
 
-        store.computed.downAlpha
+        store.computed.decrementAlpha
             .observe(on: .mainThread)
-            .bind(to: downButton, \.alpha)
+            .bind(to: decrementButton, \.alpha)
     }
 
-    @IBAction private func upButtonTapped(_ sender: UIButton) {
-        store.actions.countUp()
+    @IBAction private func incrementButtonTapped(_ sender: UIButton) {
+        store.actions.increment()
     }
 
-    @IBAction private func downButtonTapped(_ sender: UIButton) {
-        store.actions.countDown()
+    @IBAction private func decrementButtonTapped(_ sender: UIButton) {
+        store.actions.decrement()
     }
 }
 
@@ -56,17 +56,17 @@ enum VF { // Namespace
     }
 
     enum CountAction {
-        case down
-        case up
+        case increment
+        case decrement
     }
 
     struct CountMutations: Mutations {
         func commit(action: CountAction, state: CountState) {
             switch action {
-            case .up:
+            case .increment:
                 state.count.value += 1
 
-            case .down:
+            case .decrement:
                 state.count.value -= 1
             }
         }
@@ -74,12 +74,12 @@ enum VF { // Namespace
 }
 
 extension Actions where State == VF.CountState {
-    func countUp() {
-        dispatch(action: .up)
+    func increment() {
+        dispatch(action: .increment)
     }
 
-    func countDown() {
-        dispatch(action: .down)
+    func decrement() {
+        dispatch(action: .decrement)
     }
 }
 
@@ -89,13 +89,13 @@ extension Computed where State ==VF.CountState {
             .map(String.init)
     }
 
-    var isDownEnabled: Signal<Bool> {
+    var isDecrementEnabled: Signal<Bool> {
         return state.count.signal
             .map { $0 > 0 }
     }
 
-    var downAlpha: Signal<CGFloat> {
-        return isDownEnabled
+    var decrementAlpha: Signal<CGFloat> {
+        return isDecrementEnabled
             .map { $0 ? 1 : 0.5 }
     }
 }
