@@ -16,7 +16,7 @@ final class VueFluxSampleViewController: UIViewController {
     @IBOutlet private weak var downButton: UIButton!
     @IBOutlet private weak var countLabel: UILabel!
 
-    private let store = Store<CountState>(state: .init(), mutations: .init(), executor: .immediate)
+    private let store = Store<VF.CountState>(state: .init(), mutations: .init(), executor: .immediate)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,31 +46,34 @@ final class VueFluxSampleViewController: UIViewController {
 
 // MARK: - VueFlux
 
-final class CountState: State {
-    typealias Action = CountAction
-    typealias Mutations = CountMutations
+enum VF { // Namespace
 
-    fileprivate let count = Variable<Int>(0)
-}
+    final class CountState: State {
+        typealias Action = CountAction
+        typealias Mutations = CountMutations
 
-enum CountAction {
-    case down
-    case up
-}
+        fileprivate let count = Variable<Int>(0)
+    }
 
-struct CountMutations: Mutations {
-    func commit(action: CountAction, state: CountState) {
-        switch action {
-        case .up:
-            state.count.value += 1
+    enum CountAction {
+        case down
+        case up
+    }
 
-        case .down:
-            state.count.value -= 1
+    struct CountMutations: Mutations {
+        func commit(action: CountAction, state: CountState) {
+            switch action {
+            case .up:
+                state.count.value += 1
+
+            case .down:
+                state.count.value -= 1
+            }
         }
     }
 }
 
-extension Actions where State == CountState {
+extension Actions where State == VF.CountState {
     func countUp() {
         dispatch(action: .up)
     }
@@ -80,7 +83,7 @@ extension Actions where State == CountState {
     }
 }
 
-extension Computed where State == CountState {
+extension Computed where State ==VF.CountState {
     var count: Signal<String> {
         return state.count.signal
             .map(String.init)

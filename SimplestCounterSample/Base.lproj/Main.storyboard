@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZx-Bn-Xau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="905"/>
+            <point key="canvasLocation" x="646" y="154"/>
         </scene>
         <!--MVC-->
         <scene sceneID="NAA-rA-UU1">
@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tq-In-HGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-587"/>
+            <point key="canvasLocation" x="-340" y="-603"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zc8-ve-Xzv">
@@ -124,6 +124,7 @@
                         <segue destination="70Y-9D-n3O" kind="relationship" relationship="viewControllers" id="mTs-RS-ylC"/>
                         <segue destination="XYb-u7-7iQ" kind="relationship" relationship="viewControllers" id="0Y6-ce-7Rm"/>
                         <segue destination="OKG-6Y-4SE" kind="relationship" relationship="viewControllers" id="MbI-iQ-yo6"/>
+                        <segue destination="alY-i6-EEZ" kind="relationship" relationship="viewControllers" id="eDG-xO-JN9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhg-q8-A4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NU-o8-HuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="154"/>
+            <point key="canvasLocation" x="646" y="-603"/>
         </scene>
         <!--VueFlux-->
         <scene sceneID="cDK-T6-hD3">
@@ -234,7 +235,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftg-6c-dIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="904"/>
+            <point key="canvasLocation" x="646" y="911"/>
+        </scene>
+        <!--FluxCapacitor-->
+        <scene sceneID="SLk-qv-IBd">
+            <objects>
+                <viewController id="alY-i6-EEZ" customClass="FluxCapacitorSampleViewController" customModule="SimplestCounterSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nKz-MP-vXv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raP-dZ-dGe">
+                                <rect key="frame" x="160" y="201" width="54" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⬆"/>
+                                <connections>
+                                    <action selector="upButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="Xbd-Zg-4ie"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-h7-1Yj">
+                                <rect key="frame" x="160" y="393" width="54" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⬇"/>
+                                <connections>
+                                    <action selector="downButtonTapped:" destination="alY-i6-EEZ" eventType="touchUpInside" id="UP4-9D-89y"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-dQ-qZO">
+                                <rect key="frame" x="162" y="303" width="50.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mz1-dQ-qZO" firstAttribute="centerY" secondItem="nKz-MP-vXv" secondAttribute="centerY" id="Egi-vf-QYg"/>
+                            <constraint firstItem="kJL-h7-1Yj" firstAttribute="top" secondItem="Mz1-dQ-qZO" secondAttribute="bottom" constant="30" id="Zgd-Zc-FMd"/>
+                            <constraint firstItem="Mz1-dQ-qZO" firstAttribute="top" secondItem="raP-dZ-dGe" secondAttribute="bottom" constant="30" id="dJo-z6-jEp"/>
+                            <constraint firstItem="raP-dZ-dGe" firstAttribute="centerX" secondItem="nKz-MP-vXv" secondAttribute="centerX" id="f70-5H-hty"/>
+                            <constraint firstItem="kJL-h7-1Yj" firstAttribute="centerX" secondItem="nKz-MP-vXv" secondAttribute="centerX" id="gTR-Os-SRY"/>
+                            <constraint firstItem="Mz1-dQ-qZO" firstAttribute="centerX" secondItem="nKz-MP-vXv" secondAttribute="centerX" id="kBt-1U-2y0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HYb-e5-4UP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="FluxCapacitor" id="Vge-IM-059"/>
+                    <connections>
+                        <outlet property="countLabel" destination="Mz1-dQ-qZO" id="byk-dH-EQH"/>
+                        <outlet property="downButton" destination="kJL-h7-1Yj" id="OHm-vN-IAk"/>
+                        <outlet property="upButton" destination="raP-dZ-dGe" id="2PG-Nx-dEf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97c-bH-XKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="911"/>
         </scene>
     </scenes>
 </document>
