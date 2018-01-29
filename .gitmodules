@@ -1,3 +1,9 @@
 [submodule "Carthage/Checkouts/RxSwift"]
 	path = Carthage/Checkouts/RxSwift
 	url = https://github.com/ReactiveX/RxSwift.git
+[submodule "Carthage/Checkouts/VueFlux"]
+	path = Carthage/Checkouts/VueFlux
+	url = https://github.com/ra1028/VueFlux.git
+[submodule "Carthage/Checkouts/FluxCapacitor"]
+	path = Carthage/Checkouts/FluxCapacitor
+	url = https://github.com/marty-suzuki/FluxCapacitor.git

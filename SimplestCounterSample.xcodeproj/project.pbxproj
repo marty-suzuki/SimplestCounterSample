@@ -16,6 +16,9 @@
 		37213C372018FCD0009A93FD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C352018FCD0009A93FD /* RxSwift.framework */; };
 		37213C382018FCD0009A93FD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C362018FCD0009A93FD /* RxCocoa.framework */; };
 		37213C3A2018FD5E009A93FD /* MVPSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37213C392018FD5E009A93FD /* MVPSampleViewController.swift */; };
+		9D137AFC201EC9DF009D20CE /* FluxCapacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */; };
+		9D137AFD201EC9DF009D20CE /* VueFluxReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */; };
+		9D137AFE201EC9DF009D20CE /* VueFlux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFB201EC9DF009D20CE /* VueFlux.framework */; };
 		ED727D3E2019812D00E5C761 /* CountModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */; };
 		ED727D402019824E00E5C761 /* CountPresenterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */; };
 		ED727D4220198E3200E5C761 /* CountViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */; };
@@ -47,6 +50,9 @@
 		37213C352018FCD0009A93FD /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		37213C362018FCD0009A93FD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		37213C392018FD5E009A93FD /* MVPSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSampleViewController.swift; sourceTree = "<group>"; };
+		9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FluxCapacitor.framework; path = Carthage/Build/iOS/FluxCapacitor.framework; sourceTree = "<group>"; };
+		9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFluxReactive.framework; path = Carthage/Build/iOS/VueFluxReactive.framework; sourceTree = "<group>"; };
+		9D137AFB201EC9DF009D20CE /* VueFlux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFlux.framework; path = Carthage/Build/iOS/VueFlux.framework; sourceTree = "<group>"; };
 		ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModelTestCase.swift; sourceTree = "<group>"; };
 		ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPresenterTestCase.swift; sourceTree = "<group>"; };
 		ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModelTestCase.swift; sourceTree = "<group>"; };
@@ -57,6 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D137AFC201EC9DF009D20CE /* FluxCapacitor.framework in Frameworks */,
+				9D137AFD201EC9DF009D20CE /* VueFluxReactive.framework in Frameworks */,
+				9D137AFE201EC9DF009D20CE /* VueFlux.framework in Frameworks */,
 				37213C372018FCD0009A93FD /* RxSwift.framework in Frameworks */,
 				37213C382018FCD0009A93FD /* RxCocoa.framework in Frameworks */,
 			);
@@ -122,6 +131,9 @@
 		37213C342018FCD0009A93FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */,
+				9D137AFB201EC9DF009D20CE /* VueFlux.framework */,
+				9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */,
 				37213C362018FCD0009A93FD /* RxCocoa.framework */,
 				37213C352018FCD0009A93FD /* RxSwift.framework */,
 			);
@@ -236,6 +248,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FluxCapacitor.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/VueFlux.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/VueFluxReactive.framework",
 			);
 			outputPaths = (
 			);
