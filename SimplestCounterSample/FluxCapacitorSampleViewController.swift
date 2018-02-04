@@ -22,20 +22,23 @@ final class FluxCapacitorSampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateViews()
-
-        store.subscribe { [unowned self] _ in
-            DispatchQueue.main.async { [unowned self] in
-                self.updateViews()
+        store.count
+            .observe(on: .main) { [weak self] in
+                self?.countLabel.text = "\($0)"
             }
-        }
-        .cleaned(by: dustBuster)
-    }
+            .cleaned(by: dustBuster)
 
-    private func updateViews() {
-        countLabel.text = store.count
-        decrementButton.isEnabled = store.isDecrementEnabled
-        decrementButton.alpha = store.decrementAlpha
+        store.isDecrementEnabled
+            .observe(on: .main) { [weak self] in
+                self?.decrementButton.isEnabled = $0
+            }
+            .cleaned(by: dustBuster)
+
+        store.decrementAlpha
+            .observe(on: .main) { [weak self] in
+                self?.decrementButton.alpha = $0
+            }
+            .cleaned(by: dustBuster)
     }
 
     @IBAction private func incrementButtonTapped(_ sender: UIButton) {
@@ -52,8 +55,16 @@ final class FluxCapacitorSampleViewController: UIViewController {
 
 enum FC { // Namespace
 
+    enum CountState: DispatchState {
+        typealias RelatedActionType = CountAction
+        typealias RelatedStoreType = CountStore
+
+        case increment
+        case decrement
+    }
+    
     final class CountAction: Actionable {
-        typealias DispatchValueType = CountValue
+        typealias DispatchStateType = CountState
 
         func increment() {
             invoke(.increment)
@@ -65,39 +76,40 @@ enum FC { // Namespace
     }
 
     final class CountStore: Storable {
-        typealias DispatchValueType = CountValue
+        typealias DispatchStateType = CountState
 
-        private var _count: Int = 0
+        let count: Constant<Int>
+        private let _count = Variable<Int>(0)
 
-        var count: String {
-            return "\(_count)"
-        }
+        let isDecrementEnabled: Constant<Bool>
+        private let _isDecrementEnabled = Variable<Bool>(false)
 
-        var isDecrementEnabled: Bool {
-            return _count > 0
-        }
+        let decrementAlpha: Constant<CGFloat>
+        private let _decrementAlpha = Variable<CGFloat>(0)
 
-        var decrementAlpha: CGFloat {
-            return isDecrementEnabled ? 1 : 0.5
-        }
+        private let dustBuster = DustBuster()
 
-        init(dispatcher: Dispatcher) {
-            register { [unowned self] value in
-                switch value {
-                case .increment:
-                    self._count += 1
-                case .decrement:
-                    self._count -= 1
+        init() {
+            self.count = Constant(_count)
+            self.isDecrementEnabled = Constant(_isDecrementEnabled)
+            self.decrementAlpha = Constant(_decrementAlpha)
+
+            _count
+                .observe { [weak self] in
+                    guard let me = self else { return }
+                    me._isDecrementEnabled.value = $0 > 0
+                    me._decrementAlpha.value = me._isDecrementEnabled.value ? 1 : 0.5
                 }
+                .cleaned(by: dustBuster)
+        }
+
+        func reduce(with state: CountState) {
+            switch state {
+            case .increment:
+                _count.value += 1
+            case .decrement:
+                _count.value -= 1
             }
         }
-    }
-
-    enum CountValue: DispatchValue {
-        typealias RelatedActionType = CountAction
-        typealias RelatedStoreType = CountStore
-
-        case increment
-        case decrement
     }
 }
