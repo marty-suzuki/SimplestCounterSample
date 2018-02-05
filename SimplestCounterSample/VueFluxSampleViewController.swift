@@ -10,6 +10,8 @@ import UIKit
 import VueFlux
 import VueFluxReactive
 
+// MARK: - View
+
 final class VueFluxSampleViewController: UIViewController {
 
     @IBOutlet private weak var incrementButton: UIButton!

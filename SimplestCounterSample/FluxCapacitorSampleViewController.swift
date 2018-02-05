@@ -9,6 +9,8 @@
 import UIKit
 import FluxCapacitor
 
+// MARK: - View
+
 final class FluxCapacitorSampleViewController: UIViewController {
 
     @IBOutlet private weak var incrementButton: UIButton!

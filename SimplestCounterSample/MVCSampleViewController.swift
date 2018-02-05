@@ -17,7 +17,7 @@ final class MVCSampleViewController: UIViewController {
     @IBOutlet private weak var countLabel: UILabel!
 
     private let model = CountModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
