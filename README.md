@@ -1,6 +1,6 @@
 # SimplestCounterSample
 
-This is simplest Counter App for beginner of iOS development.
+This is simplest Counter App written in many variety of design patterns.
 
 ![](./Images/counter.gif)
 
@@ -12,9 +12,24 @@ This is simplest Counter App for beginner of iOS development.
   - Source: [MVPSampleViewController.swift](./SimplestCounterSample/MVPSampleViewController.swift)
   - Unit Test: [CountPresenterTestCase.swift](./SimplestCounterSampleTests/CountPresenterTestCase.swift)
 
-### MVVM with [RxSwift](https://github.com/ReactiveX/RxSwift)
+### MVVM
   - Source: [MVVMSampleViewController.swift](./SimplestCounterSample/MVVMSampleViewController.swift)
-  - Unit Test: [CountViewModelTestCase.swift](./SimplestCounterSampleTests/CountViewModelTestCase.swift)
+
+### MVVM with [RxSwift](https://github.com/ReactiveX/RxSwift)
+  - Source: [MVVMSampleViewController.swift](./SimplestCounterSample/MVVMWithRxSwiftSampleViewController.swift)
+  - Unit Test: [CountViewModelWithRxSwiftTestCase.swift](./SimplestCounterSampleTests/CountViewModelWithRxSwiftTestCase.swift)
+
+### Flux
+  - Source: [FluxSampleViewController.swift](./SimplestCounterSample/FluxSampleViewController.swift)
+
+### Flux with [VueFlux](https://github.com/ra1028/VueFlux)
+  - Source: [VueFluxSampleViewController.swift](./SimplestCounterSample/VueFluxSampleViewController.swift)
+
+### Flux with [FluxCapacitor](https://github.com/marty-suzuki/FluxCapacitor)
+  - Source: [FluxCapacitorSampleViewController.swift](./SimplestCounterSample/FluxCapacitorSampleViewController.swift)
+
+### Flux with [RxSwift](https://github.com/ReactiveX/RxSwift)
+  - Source: [FluxWithRxSwiftSampleViewController.swift](./SimplestCounterSample/FluxWithRxSwiftSampleViewController.swift)
 
 ## Run
 

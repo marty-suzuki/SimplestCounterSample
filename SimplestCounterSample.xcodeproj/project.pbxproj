@@ -36,7 +36,7 @@
 		9DBE0F7E201EDF8B00BDB619 /* FluxCapacitorSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBE0F7D201EDF8B00BDB619 /* FluxCapacitorSampleViewController.swift */; };
 		ED727D3E2019812D00E5C761 /* CountModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */; };
 		ED727D402019824E00E5C761 /* CountPresenterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */; };
-		ED727D4220198E3200E5C761 /* CountViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */; };
+		ED727D4220198E3200E5C761 /* CountViewModelWithRxSwiftTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED727D4120198E3200E5C761 /* CountViewModelWithRxSwiftTestCase.swift */; };
 		ED727D4320198EF800E5C761 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C352018FCD0009A93FD /* RxSwift.framework */; };
 		ED727D442019907300E5C761 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37213C362018FCD0009A93FD /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
@@ -85,7 +85,7 @@
 		9DBE0F7D201EDF8B00BDB619 /* FluxCapacitorSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxCapacitorSampleViewController.swift; sourceTree = "<group>"; };
 		ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModelTestCase.swift; sourceTree = "<group>"; };
 		ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPresenterTestCase.swift; sourceTree = "<group>"; };
-		ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModelTestCase.swift; sourceTree = "<group>"; };
+		ED727D4120198E3200E5C761 /* CountViewModelWithRxSwiftTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountViewModelWithRxSwiftTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			children = (
 				ED727D3D2019812D00E5C761 /* CountModelTestCase.swift */,
 				ED727D3F2019824E00E5C761 /* CountPresenterTestCase.swift */,
-				ED727D4120198E3200E5C761 /* CountViewModelTestCase.swift */,
+				ED727D4120198E3200E5C761 /* CountViewModelWithRxSwiftTestCase.swift */,
 				37213C282018FB3A009A93FD /* Info.plist */,
 			);
 			path = SimplestCounterSampleTests;
@@ -353,7 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED727D402019824E00E5C761 /* CountPresenterTestCase.swift in Sources */,
-				ED727D4220198E3200E5C761 /* CountViewModelTestCase.swift in Sources */,
+				ED727D4220198E3200E5C761 /* CountViewModelWithRxSwiftTestCase.swift in Sources */,
 				ED727D3E2019812D00E5C761 /* CountModelTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

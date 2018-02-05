@@ -1,5 +1,5 @@
 //
-//  CountViewModelTestCase.swift
+//  CountViewModelWithRxSwiftTestCase.swift
 //  SimplestCounterSampleTests
 //
 //  Created by 鈴木大貴 on 2018/01/25.
@@ -12,18 +12,18 @@ import RxCocoa
 
 @testable import SimplestCounterSample
 
-final class CountViewModelTestCase: XCTestCase {
+final class CountViewModelWithRxSwiftTestCase: XCTestCase {
     private var incrementButtonTapped: PublishSubject<Void>!
     private var decrementButtonTapped: PublishSubject<Void>!
-    private var viewModel: CountViewModel!
+    private var viewModel: Rx.CountViewModel!
 
     override func setUp() {
         super.setUp()
 
         self.incrementButtonTapped = PublishSubject()
         self.decrementButtonTapped = PublishSubject()
-        self.viewModel = CountViewModel(incrementButtonTapped: incrementButtonTapped,
-                                        decrementButtonTapped: decrementButtonTapped)
+        self.viewModel = Rx.CountViewModel(incrementButtonTapped: incrementButtonTapped,
+                                           decrementButtonTapped: decrementButtonTapped)
     }
     
     func testInitialValues() {
