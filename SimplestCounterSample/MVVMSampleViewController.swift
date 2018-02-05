@@ -21,17 +21,10 @@ final class MVVMSampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        countLabel.text = viewModel.count
-        decrementButton.isEnabled = viewModel.isDecrementEnabled
-        decrementButton.alpha = viewModel.decrementAlpha
-
         do {
-            try viewModel.observe(keyPath: \.count,
-                                  bindTo: countLabel, \.text)
-            try viewModel.observe(keyPath: \.isDecrementEnabled,
-                                  bindTo: decrementButton, \.isEnabled)
-            try viewModel.observe(keyPath: \.decrementAlpha,
-                                  bindTo: decrementButton, \.alpha)
+            try viewModel.observe(keyPath: \.count, bindTo: countLabel, \.text)
+            try viewModel.observe(keyPath: \.isDecrementEnabled, bindTo: decrementButton, \.isEnabled)
+            try viewModel.observe(keyPath: \.decrementAlpha, bindTo: decrementButton, \.alpha)
         } catch let e {
             fatalError("\(e)")
         }
@@ -110,9 +103,12 @@ final class CountViewModel {
         default                                : throw Error.invalidKeyPath(keyPath1)
         }
 
-        observers.append(center.addObserver(forName: name, object: nil, queue: queue) { [weak self, weak target] _ in
+        let handler: () -> () = { [weak self, weak target] in
             guard let me = self, let target = target, let value = me[keyPath: keyPath1] as? Value2 else { return }
             target[keyPath: keyPath2] = value
-        })
+        }
+
+        observers.append(center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() })
+        handler()
     }
 }

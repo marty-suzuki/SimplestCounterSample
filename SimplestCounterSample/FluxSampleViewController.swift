@@ -27,17 +27,10 @@ final class FluxSampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        countLabel.text = store.count
-        decrementButton.isEnabled = store.isDecrementEnabled
-        decrementButton.alpha = store.decrementAlpha
-
         do {
-            try observers.append(store.observe(keyPath: \.count,
-                                               bindTo: countLabel, \.text))
-            try observers.append(store.observe(keyPath: \.isDecrementEnabled,
-                                               bindTo: decrementButton, \.isEnabled))
-            try observers.append(store.observe(keyPath: \.decrementAlpha,
-                                               bindTo: decrementButton, \.alpha))
+            try observers.append(store.observe(keyPath: \.count, bindTo: countLabel, \.text))
+            try observers.append(store.observe(keyPath: \.isDecrementEnabled, bindTo: decrementButton, \.isEnabled))
+            try observers.append(store.observe(keyPath: \.decrementAlpha, bindTo: decrementButton, \.alpha))
         } catch let e {
             fatalError("\(e)")
         }
@@ -139,10 +132,15 @@ final class CountStore {
         default                            : throw Error.invalidKeyPath(keyPath1)
         }
 
-        return center.addObserver(forName: name, object: nil, queue: queue) { [weak self, weak target] _ in
+        let handler: () -> () = { [weak self, weak target] in
             guard let me = self, let target = target, let value = me[keyPath: keyPath1] as? Value2 else { return }
             target[keyPath: keyPath2] = value
         }
+
+        let observer = center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() }
+        handler()
+        
+        return observer
     }
 
     func removeObservers(_ observes: [NSObjectProtocol]) {
