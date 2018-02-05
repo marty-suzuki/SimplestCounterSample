@@ -33,14 +33,11 @@ final class FluxSampleViewController: UIViewController {
 
         do {
             try observers.append(store.observe(keyPath: \.count,
-                                               bindTo: countLabel,
-                                               keyPath: \.text))
+                                               bindTo: countLabel, \.text))
             try observers.append(store.observe(keyPath: \.isDecrementEnabled,
-                                               bindTo: decrementButton,
-                                               keyPath: \.isEnabled))
+                                               bindTo: decrementButton, \.isEnabled))
             try observers.append(store.observe(keyPath: \.decrementAlpha,
-                                               bindTo: decrementButton,
-                                               keyPath: \.alpha))
+                                               bindTo: decrementButton, \.alpha))
         } catch let e {
             fatalError("\(e)")
         }
@@ -133,7 +130,7 @@ final class CountStore {
     func observe<Value1, Target: AnyObject, Value2>(keyPath keyPath1: KeyPath<CountStore, Value1>,
                                                     on queue: OperationQueue? = .main,
                                                     bindTo target: Target,
-                                                    keyPath keyPath2: ReferenceWritableKeyPath<Target, Value2>) throws -> NSObjectProtocol {
+                                                    _ keyPath2: ReferenceWritableKeyPath<Target, Value2>) throws -> NSObjectProtocol {
         let name: Notification.Name
         switch keyPath1 {
         case \CountStore.count             : name = Names.countChanged

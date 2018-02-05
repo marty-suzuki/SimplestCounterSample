@@ -27,14 +27,11 @@ final class MVVMSampleViewController: UIViewController {
 
         do {
             try viewModel.observe(keyPath: \.count,
-                                  bindTo: countLabel,
-                                  keyPath: \.text)
+                                  bindTo: countLabel, \.text)
             try viewModel.observe(keyPath: \.isDecrementEnabled,
-                                  bindTo: decrementButton,
-                                  keyPath: \.isEnabled)
+                                  bindTo: decrementButton, \.isEnabled)
             try viewModel.observe(keyPath: \.decrementAlpha,
-                                  bindTo: decrementButton,
-                                  keyPath: \.alpha)
+                                  bindTo: decrementButton, \.alpha)
         } catch let e {
             fatalError("\(e)")
         }
@@ -104,7 +101,7 @@ final class CountViewModel {
     func observe<Value1, Target: AnyObject, Value2>(keyPath keyPath1: KeyPath<CountViewModel, Value1>,
                                                     on queue: OperationQueue? = .main,
                                                     bindTo target: Target,
-                                                    keyPath keyPath2: ReferenceWritableKeyPath<Target, Value2>) throws {
+                                                    _ keyPath2: ReferenceWritableKeyPath<Target, Value2>) throws {
         let name: Notification.Name
         switch keyPath1 {
         case \CountViewModel.count             : name = Names.countChanged
