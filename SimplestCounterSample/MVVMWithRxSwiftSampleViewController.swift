@@ -1,5 +1,5 @@
 //
-//  MVVMSampleViewController.swift
+//  MVVMWithRxSwiftSampleViewController.swift
 //  SimplestCounterSample
 //
 //  Created by marty-suzuki on 2018/01/25.
@@ -12,7 +12,7 @@ import RxCocoa
 
 // MARK: - View
 
-final class MVVMSampleViewController: UIViewController {
+final class MVVMWithRxSwiftSampleViewController: UIViewController {
 
     @IBOutlet private weak var incrementButton: UIButton!
     @IBOutlet private weak var decrementButton: UIButton!

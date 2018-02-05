@@ -1,5 +1,5 @@
 //
-//  FluxWithRxSwiftViewController.swift
+//  FluxWithRxSwiftSampleViewController.swift
 //  SimplestCounterSample
 //
 //  Created by marty-suzuki on 2018/02/06.
@@ -12,7 +12,7 @@ import RxCocoa
 
 // MARK: - View
 
-final class FluxWithRxSwiftViewController: UIViewController {
+final class FluxWithRxSwiftSampleViewController: UIViewController {
 
     @IBOutlet private weak var incrementButton: UIButton!
     @IBOutlet private weak var decrementButton: UIButton!
