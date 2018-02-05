@@ -89,23 +89,23 @@ final class CountStore {
         case invalidKeyPath(AnyKeyPath)
     }
 
-    var count: String {
-        return String(_count)
+    private(set) var count: String = "" {
+        didSet { center.post(name: Names.countChanged, object: nil) }
     }
-    var isDecrementEnabled: Bool {
-        return _count > 0
+    private(set) var isDecrementEnabled: Bool = false {
+        didSet { center.post(name: Names.isDecrementEnabledChanged, object: nil) }
     }
-    var decrementAlpha: CGFloat {
-        return isDecrementEnabled ? 1 : 0.5
+    private(set) var decrementAlpha: CGFloat = 0.5 {
+        didSet { center.post(name: Names.decrementAlphaChanged, object: nil) }
     }
 
     private let center: NotificationCenter
 
     private var _count: Int = 0 {
         didSet {
-            center.post(name: Names.countChanged, object: nil)
-            center.post(name: Names.isDecrementEnabledChanged, object: nil)
-            center.post(name: Names.decrementAlphaChanged, object: nil)
+            count = String(_count)
+            isDecrementEnabled = _count > 0
+            decrementAlpha = isDecrementEnabled ? 1 : 0.5
         }
     }
 
@@ -114,10 +114,15 @@ final class CountStore {
     init(dispatcher: CountDispatcher = .shared, center: NotificationCenter = .init()) {
         self.dispatcher = dispatcher
         self.center = center
+        setInitialValue()
 
         dispatcher.value = { [weak self] in
             self?._count += $0
         }
+    }
+
+    private func setInitialValue() {
+        _count = 0
     }
 
     func observe<Value1, Target: AnyObject, Value2>(keyPath keyPath1: KeyPath<CountStore, Value1>,
@@ -137,10 +142,8 @@ final class CountStore {
             target[keyPath: keyPath2] = value
         }
 
-        let observer = center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() }
         handler()
-        
-        return observer
+        return center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() }
     }
 
     func removeObservers(_ observes: [NSObjectProtocol]) {

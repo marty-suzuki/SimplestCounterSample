@@ -54,14 +54,14 @@ final class CountViewModel {
         case invalidKeyPath(AnyKeyPath)
     }
 
-    var count: String {
-        return String(_count)
+    private(set) var count: String = "" {
+        didSet { center.post(name: Names.countChanged, object: nil) }
     }
-    var isDecrementEnabled: Bool {
-        return _count > 0
+    private(set) var isDecrementEnabled: Bool = false {
+        didSet { center.post(name: Names.isDecrementEnabledChanged, object: nil) }
     }
-    var decrementAlpha: CGFloat {
-        return isDecrementEnabled ? 1 : 0.5
+    private(set) var decrementAlpha: CGFloat = 0.5 {
+        didSet { center.post(name: Names.decrementAlphaChanged, object: nil) }
     }
 
     private var observers: [NSObjectProtocol] = []
@@ -69,9 +69,9 @@ final class CountViewModel {
 
     private var _count: Int = 0 {
         didSet {
-            center.post(name: Names.countChanged, object: nil)
-            center.post(name: Names.isDecrementEnabledChanged, object: nil)
-            center.post(name: Names.decrementAlphaChanged, object: nil)
+            count = String(_count)
+            isDecrementEnabled = _count > 0
+            decrementAlpha = isDecrementEnabled ? 1 : 0.5
         }
     }
 
@@ -81,6 +81,11 @@ final class CountViewModel {
 
     init(center: NotificationCenter = .init()) {
         self.center = center
+        setInitialValue()
+    }
+
+    private func setInitialValue() {
+        _count = 0
     }
 
     func increment() {
@@ -108,7 +113,7 @@ final class CountViewModel {
             target[keyPath: keyPath2] = value
         }
 
-        observers.append(center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() })
         handler()
+        observers.append(center.addObserver(forName: name, object: nil, queue: queue) { _ in handler() })
     }
 }
