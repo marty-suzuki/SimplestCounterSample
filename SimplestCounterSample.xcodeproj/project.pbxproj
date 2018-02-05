@@ -27,6 +27,8 @@
 		37F3F8A72028D09F005753FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3F8A42028D09F005753FB /* RootViewController.swift */; };
 		37F3F8A92028D128005753FB /* FluxSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3F8A82028D128005753FB /* FluxSampleViewController.swift */; };
 		37F3F8AB2028D146005753FB /* FluxSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F3F8AA2028D146005753FB /* FluxSampleViewController.xib */; };
+		37F3F8AD2028DB34005753FB /* MVVMSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3F8AC2028DB34005753FB /* MVVMSampleViewController.swift */; };
+		37F3F8AF2028DB4A005753FB /* MVVMSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F3F8AE2028DB49005753FB /* MVVMSampleViewController.xib */; };
 		9D137AFC201EC9DF009D20CE /* FluxCapacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */; };
 		9D137AFD201EC9DF009D20CE /* VueFluxReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */; };
 		9D137AFE201EC9DF009D20CE /* VueFlux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D137AFB201EC9DF009D20CE /* VueFlux.framework */; };
@@ -74,6 +76,8 @@
 		37F3F8A42028D09F005753FB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		37F3F8A82028D128005753FB /* FluxSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxSampleViewController.swift; sourceTree = "<group>"; };
 		37F3F8AA2028D146005753FB /* FluxSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FluxSampleViewController.xib; sourceTree = "<group>"; };
+		37F3F8AC2028DB34005753FB /* MVVMSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleViewController.swift; sourceTree = "<group>"; };
+		37F3F8AE2028DB49005753FB /* MVVMSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MVVMSampleViewController.xib; sourceTree = "<group>"; };
 		9D137AF9201EC9DF009D20CE /* FluxCapacitor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FluxCapacitor.framework; path = Carthage/Build/iOS/FluxCapacitor.framework; sourceTree = "<group>"; };
 		9D137AFA201EC9DF009D20CE /* VueFluxReactive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFluxReactive.framework; path = Carthage/Build/iOS/VueFluxReactive.framework; sourceTree = "<group>"; };
 		9D137AFB201EC9DF009D20CE /* VueFlux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VueFlux.framework; path = Carthage/Build/iOS/VueFlux.framework; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				37F3F8942028C52F005753FB /* FluxWithRxSwiftSampleViewController.xib */,
 				37F3F8A82028D128005753FB /* FluxSampleViewController.swift */,
 				37F3F8AA2028D146005753FB /* FluxSampleViewController.xib */,
+				37F3F8AC2028DB34005753FB /* MVVMSampleViewController.swift */,
+				37F3F8AE2028DB49005753FB /* MVVMSampleViewController.xib */,
 			);
 			path = SimplestCounterSample;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F3F8912028C0DC005753FB /* VueFluxSampleViewController.xib in Resources */,
+				37F3F8AF2028DB4A005753FB /* MVVMSampleViewController.xib in Resources */,
 				37F3F8AB2028D146005753FB /* FluxSampleViewController.xib in Resources */,
 				37F3F88F2028C0DC005753FB /* MVPSampleViewController.xib in Resources */,
 				37F3F8A02028D074005753FB /* Main.storyboard in Resources */,
@@ -337,6 +344,7 @@
 				37F3F8A52028D09F005753FB /* AppDelegate.swift in Sources */,
 				37F3F8932028C519005753FB /* FluxWithRxSwiftSampleViewController.swift in Sources */,
 				37F3F8A92028D128005753FB /* FluxSampleViewController.swift in Sources */,
+				37F3F8AD2028DB34005753FB /* MVVMSampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

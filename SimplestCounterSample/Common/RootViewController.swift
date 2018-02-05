@@ -14,6 +14,7 @@ final class RootViewController: UIViewController {
         case mvc
         case mvp
         case mvvm
+        case mvvmWithRxSwift
         case flux
         case vueFlux
         case fluxCapacitor
@@ -78,7 +79,8 @@ extension RootViewController.Pattern {
         switch self {
         case .mvc            : return "MVC"
         case .mvp            : return "MVP"
-        case .mvvm           : return "MVVM with RxSwift"
+        case .mvvm           : return "MVVM"
+        case .mvvmWithRxSwift: return "MVVM with RxSwift"
         case .flux           : return "Flux"
         case .vueFlux        : return "Flux with VueFlux"
         case .fluxCapacitor  : return "Flux with FluxCapacitor"
@@ -90,7 +92,8 @@ extension RootViewController.Pattern {
         switch self {
         case .mvc            : return MVCSampleViewController.makeFromNib()
         case .mvp            : return MVPSampleViewController.makeFromNib()
-        case .mvvm           : return MVVMWithRxSwiftSampleViewController.makeFromNib()
+        case .mvvm           : return MVVMSampleViewController.makeFromNib()
+        case .mvvmWithRxSwift: return MVVMWithRxSwiftSampleViewController.makeFromNib()
         case .flux           : return FluxSampleViewController.makeFromNib()
         case .vueFlux        : return VueFluxSampleViewController.makeFromNib()
         case .fluxCapacitor  : return FluxCapacitorSampleViewController.makeFromNib()
