@@ -33,17 +33,11 @@
                     <rect key="frame" x="160.5" y="201.5" width="54" height="72"/>
                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                     <state key="normal" title="⬆"/>
-                    <connections>
-                        <action selector="incrementButtonTapped:" destination="-1" eventType="touchUpInside" id="jCu-aA-SiX"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzC-lU-p77">
                     <rect key="frame" x="160.5" y="393.5" width="54" height="72"/>
                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                     <state key="normal" title="⬇"/>
-                    <connections>
-                        <action selector="decrementButtonTapped:" destination="-1" eventType="touchUpInside" id="Lkx-Mg-T7T"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

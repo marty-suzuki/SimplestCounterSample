@@ -21,6 +21,9 @@ final class MVVMSampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        incrementButton.addTarget(viewModel, action: #selector(CountViewModel.increment), for: .touchUpInside)
+        decrementButton.addTarget(viewModel, action: #selector(CountViewModel.decrement), for: .touchUpInside)
+
         do {
             try viewModel.observe(keyPath: \.count, bindTo: countLabel, \.text)
             try viewModel.observe(keyPath: \.isDecrementEnabled, bindTo: decrementButton, \.isEnabled)
@@ -28,14 +31,6 @@ final class MVVMSampleViewController: UIViewController {
         } catch let e {
             fatalError("\(e)")
         }
-    }
-
-    @IBAction private func incrementButtonTapped(_ sender: UIButton) {
-        viewModel.increment()
-    }
-
-    @IBAction private func decrementButtonTapped(_ sender: UIButton) {
-        viewModel.decrement()
     }
 }
 
@@ -88,11 +83,11 @@ final class CountViewModel {
         _count = 0
     }
 
-    func increment() {
+    @objc func increment() {
         _count += 1
     }
 
-    func decrement() {
+    @objc func decrement() {
         _count -= 1
     }
 
